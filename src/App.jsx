@@ -78,7 +78,7 @@ function App() {
           path="/"
           element={
             <Body
-             userData={userData}
+             myId={myId}
               data={data}
               loading={loading}
               fetchAccountData={fetchAccountData}
@@ -87,13 +87,13 @@ function App() {
           }
         />
         <Route path="/airdrop" element={<Wallet data={data}  loading={loading} />} />
-        <Route path="/bonus" element={<Setting data={data} loading={loading} userData={userData} fetchAccountData={fetchAccountData} />} />
+        <Route path="/bonus" element={<Setting data={data} loading={loading} myId={myId} fetchAccountData={fetchAccountData} />} />
         <Route
           path="/task"
           element={
             <Task
               data={getalltasks}
-              userData={userData}
+              myId={myId}
               fetchTasks={fetchAccountData}
               loading={loading}
             />
