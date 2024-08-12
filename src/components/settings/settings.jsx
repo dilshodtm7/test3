@@ -4,7 +4,7 @@ import { Wheel } from 'react-custom-roulette'
 import withIcon from "../../assets/loader5.gif";
 
 
-const Settings = ({data,loading,userData,fetchAccountData}) => {
+const Settings = ({data,loading,myId,fetchAccountData}) => {
   const [result, setResult] = useState(null);
   const [spinning, setSpinning] = useState(false);
 
@@ -48,7 +48,7 @@ const Settings = ({data,loading,userData,fetchAccountData}) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user_tg: toString(userData.id),
+        user_tg: myId.toString(),
         status: "active",
         balance_winnie:data.balance_winnie + Number(result),
         spin_date: newPostDate,
