@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import CoinIcon from "../assets/coin-icon.jpg";
 import { ToastContainer, toast } from "react-toastify";
 
-const daily = ({ data, fetchAccountData }) => {
+const daily = ({ data,myId, fetchAccountData }) => {
   const updatelastDate = "http://localhost:9090/auth/bydate";
 
   const dailyBonuses = [
@@ -116,7 +116,7 @@ const daily = ({ data, fetchAccountData }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user_tg: userData.id,
+        user_tg: myId.toString(),
         lastdate: currentDate,
         bonuses: 1,
         balance_winnie: data.balance_winnie + 100,
