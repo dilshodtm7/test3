@@ -13,7 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Tournament from "./tournament.jsx";
 import Daily from "./daily.jsx";
 
-const Home = ({ data,userData, loading, fetchAccountData,tournament }) => {
+const Home = ({ data,myId, loading, fetchAccountData,tournament }) => {
   const updateStatusWithBanalce = "http://localhost:9090/auth/bybalance";
   const updateStatus = "http://localhost:9090/auth/updatestatus";
 
@@ -214,7 +214,7 @@ localStorage.setItem("tournament", true);
             style={{ display: "none" }}
           >
             <div className="daily-bonus-container">
-              <Daily userData={userData} data={data} fetchAccountData={fetchAccountData} />
+              <Daily myId={myId} data={data} fetchAccountData={fetchAccountData} />
             </div>
           </div>
 
