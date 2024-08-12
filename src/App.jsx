@@ -13,7 +13,7 @@ import "./App.css";
 
 function App() {
   const getMyAccount = "http://localhost:9090/auth/login";
-  // const myId = WebApp.initDataUnsafe.user.id
+  const myId = WebApp.initDataUnsafe.user.id
   const [userData, setUserData] = useState(null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -66,7 +66,8 @@ function App() {
     fetchAccountData();
   }, []);
 
-  console.log(data);
+   console.log(userData);
+   console.log(myId);
   
 
 
