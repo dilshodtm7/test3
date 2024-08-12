@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaTelegram } from "react-icons/fa";
 import withIcon from "../../assets/loader5.gif";
 
-const special = ({ data,userData, fetchTasks, loading }) => {
+const special = ({ data,myId, fetchTasks, loading }) => {
   const Complate = "http://localhost:9090/auth/complate";
 
   const [tasks, setTasks] = useState([]);
@@ -26,7 +26,7 @@ const special = ({ data,userData, fetchTasks, loading }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user_tg: toString(userData.id),
+          user_tg: myId.toString(),
           task_id: newPost,
         }),
       });
